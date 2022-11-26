@@ -1,0 +1,18 @@
+syntax = "proto3";
+option go_package="./pdfservice;pdfservice";
+package pdfservice;
+
+service PdfService {
+  rpc Send (PostSendParams) returns (PostSendResponse) {}
+}
+
+message PostSendParams {
+    bytes Upfile1 = 1;
+    bytes Upfile2 = 2;
+    bytes Upfile3 = 3;
+}
+
+message PostSendResponse {
+  bytes Payload = 1;
+}
+
